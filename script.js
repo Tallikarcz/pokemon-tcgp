@@ -3,6 +3,7 @@
 function cardRender(folderPath, totalCards) {
   const container = document.getElementById("imageContainer");
   const fragment = document.createDocumentFragment();
+
   for (let i = 1; i <= totalCards; i++) {
     const card = document.createElement("div");
     const imgNumber = i.toString().padStart(3, "0");
@@ -17,14 +18,18 @@ function cardRender(folderPath, totalCards) {
 
   // CARDS EFFECTS
   const cards = document.querySelectorAll(".card");
+  let grayscale = true;
+
+  function applyGrayscale() {
+    cards.forEach($card => {
+        $card.style.filter = grayscale ? "grayscale(0%)" : "grayscale(100%)"
+    });
+  }
+
+  applyGrayscale();
 
   cards.forEach(($card) => {
     let bounds;
-    let grayscale = 0;
-
-    if (grayscale) {
-      $card.style.filter = "grayscale(100%)";
-    }
 
     function rotateToMouse(e) {
       const mouseX = e.clientX - bounds.x;
@@ -70,13 +75,14 @@ function cardRender(folderPath, totalCards) {
     });
 
     $card.addEventListener("click", () => {
-      if (grayscale) {
-        $card.style.filter = "grayscale(0%)";
-        grayscale = 0;
-      } else {
-        $card.style.filter = "grayscale(100%)";
-        grayscale = 1;
-      }
+      const isGrayscale = $card.style.filter === "grayscale(100%)";
+      $card.style.filter = isGrayscale ? "grayscale(0%)" : "grayscale(100%)";
     });
   });
+
+  const grayscaleToggle = document.getElementById("flexSwitchCheckDefault");
+  grayscaleToggle.addEventListener("change", () => {
+    grayscale = grayscaleToggle.checked;
+    applyGrayscale();
+})
 }
