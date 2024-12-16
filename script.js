@@ -20,7 +20,7 @@ function cardRender(folderPath, totalCards) {
 
   // CARDS EFFECTS
   const cards = document.querySelectorAll(".card");
-  let grayscale = true;
+  let grayscale = false;
 
   function applyGrayscale() {
     cards.forEach(($card) => {
