@@ -1,5 +1,5 @@
 body {
-    background-image: url(poke-pattern-2x.png);
+    background-image: url(assets/background-pattern.png);
     background-size: 400px;
 }
 
@@ -45,5 +45,6 @@ nav {
 }
 
 #logo {
-    filter: drop-shadow(0px 0px 10px #7914ff90);
+    filter: drop-shadow(0px 0px 10px #00000090);
+    width: 290px;
 }
