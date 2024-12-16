@@ -7,7 +7,7 @@ function cardRender(folderPath, totalCards) {
   for (let i = 1; i <= totalCards; i++) {
     const card = document.createElement("div");
     const imgNumber = i.toString().padStart(3, "0");
-    card.style.backgroundImage = `url(/cards/${folderPath}/${imgNumber}.webp)`;
+    card.style.backgroundImage = `url(cards/${folderPath}/${imgNumber}.webp)`;
     card.alt = `Card ${imgNumber}`;
     card.classList.add("card");
     card.innerHTML = '<div class="glow"></div>';
@@ -21,8 +21,8 @@ function cardRender(folderPath, totalCards) {
   let grayscale = true;
 
   function applyGrayscale() {
-    cards.forEach($card => {
-        $card.style.filter = grayscale ? "grayscale(0%)" : "grayscale(100%)"
+    cards.forEach(($card) => {
+      $card.style.filter = grayscale ? "grayscale(0%)" : "grayscale(100%)";
     });
   }
 
@@ -84,5 +84,5 @@ function cardRender(folderPath, totalCards) {
   grayscaleToggle.addEventListener("change", () => {
     grayscale = grayscaleToggle.checked;
     applyGrayscale();
-})
+  });
 }
