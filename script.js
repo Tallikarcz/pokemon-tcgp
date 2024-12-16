@@ -8,6 +8,7 @@ function cardRender(folderPath, totalCards) {
     const card = document.createElement("div");
     const imgNumber = i.toString().padStart(3, "0");
     card.style.backgroundImage = `url(cards/${folderPath}/${imgNumber}.webp)`;
+    console.log(`Loading image: cards/${folderPath}/${imgNumber}.webp`);
     card.alt = `Card ${imgNumber}`;
     card.classList.add("card");
     card.innerHTML = '<div class="glow"></div>';
