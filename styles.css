@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
 body {
     background-image: url(assets/background-pattern.png);
     background-size: 400px;

@@ -15,12 +15,113 @@
     <script defer src="script.js"></script>
     <script defer src="DOM_editor.js"></script>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/x-icon" href="/favicon-32x32.png">
+    <link rel="icon" type="image/x-icon" href="assets/favicon-32x32.png">
     <title>Pokemon TCGP</title>
+    <style>
+        body {
+            background-image: url('assets/tcg-devices-bg.jpg');
+            background-size: cover;
+        }
+
+        .pattern {
+            background-image: url('assets/tcg-devices-bg-pattern.png');
+            background-size: 15%;
+        }
+
+        .grid-container {
+            margin: 0 auto;
+            justify-content: center;
+            width: 80vw;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            /* padding: 20px; */
+        }
+
+        .block {
+            padding-top: 20px;
+            padding-bottom: 20px;
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 10px;
+            text-align: center;
+            background-color: #5e5e5e18;
+            backdrop-filter: blur(10px);
+        }
+
+        .block:hover {
+            transition-duration: 0.5s;
+            box-shadow: 0 2px 10px 2px #3f3f3f3f;
+        }
+
+        .block-img {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            padding: 10px;
+        }
+
+        .block-title {
+            font-weight: bolder;
+            font-size: 1.5rem;
+            margin: 10px 0;
+            color: #181818;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* body {
+            background-image: url('assets/tcg-devices-bg.jpg'), url('assets/tcg-devices-bg-pattern.jpg');
+            background-position: center, top;
+        } */
+    </style>
 </head>
 
 <body>
-    
+    <div class="pattern">
+        <div class="grid-container">
+            <!-- Booster packs section -->
+            <h1>Booster Packs</h1>
+            <h3>A1 Packs</h3>
+            <div class="grid">
+                <div class="block">
+                    <a href="genetic_apex.html">
+                        <img src="assets/a1_genetic-apex.png" alt="Genetic Apex" class="block-img">
+                        <div class="block-title">A1 — Genetic Apex</div>
+                    </a>
+                </div>
+
+                <div class="block">
+                    <a href="mythical_island.html">
+                        <img src="assets/a1a_mythical-island.png" alt="Mythical Island" class="block-img">
+                        <div class="block-title">A1a — Mythical Island</div>
+                    </a>
+                </div>
+
+
+            </div>
+            <hr>
+            <!-- Promo packs section -->
+
+            <h1>Promo Packs</h1>
+            <div class="grid">
+                <div class="block">
+                    <a href="promo_a.html">
+                        <img src="assets/promoA.png" alt="Promo A" class="block-img">
+                        <div class="block-title">Promo-A</div>
+                    </a>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
